@@ -10,7 +10,7 @@ public class App
 {
     public static void main(String[] args) throws IOException 
     {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/Cameron Jones/OneDrive - University of Houston-Clear Lake/Documents/Java Projects/VSCode personal Projects/PokeMoves/Test.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Test.txt"));
         URL url = new URL("https://www.serebii.net/pokedex-rs/004.shtml");
         Scanner sc = new Scanner(url.openStream());
         StringBuffer sb = new StringBuffer();
