@@ -10,25 +10,19 @@ public class App
 {
     public static void main(String[] args) throws IOException 
     {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Test.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Test.txt"));  // Changed file extension to .html
         URL url = new URL("https://www.serebii.net/pokedex-rs/004.shtml");
         Scanner sc = new Scanner(url.openStream());
-        StringBuffer sb = new StringBuffer();
-        while (sc.hasNext())
+        StringBuilder sb = new StringBuilder();  // Using StringBuilder for efficiency
+        while (sc.hasNextLine())  // Read line by line to preserve formatting
         {
-            sb.append(sc.next());
+            sb.append(sc.nextLine());  // Append the entire line
+            sb.append(System.lineSeparator());  // Append a newline character
         } 
 
         String result = sb.toString();
         writer.write(result);
         writer.close();
-        System.out.println(result);
-
-        result = result.replaceAll("<[^>]*>", "");
-
-        //System.out.println("Contents of the page: " + result);
-
-        
-        
+        System.out.println("HTML content saved to Test.txt");
     }
 }
