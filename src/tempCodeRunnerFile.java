@@ -1,0 +1,1 @@
+https://www.serebii.net/pokedex-rs/193.shtml
