@@ -30,19 +30,7 @@ public class App
         sc.close(); */
 
         BufferedReader reader = new BufferedReader(new FileReader("C:\\Projects\\Personal\\PokeMoves\\testCharmander.txt"));
-        String regex = "rowspan=\"2\">([1-9])</td>";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher;
         String[] importantArray;
-        String foundNumber = "wasn't found";
-        boolean matchFound;
-        LinkedList<String> moveLevels = new LinkedList<>();
-        LinkedList<String> RSECMoveNames = new LinkedList<>();
-        LinkedList<String> FRLGMoveNames = new LinkedList<>();
-        LinkedList<String> TMHMAttacks = new LinkedList<>();
-        LinkedList<String> FRLGETutorAttacks = new LinkedList<>();
-        LinkedList<String> emeraldTutorAttacks = new LinkedList<>();
-        LinkedList<String> specialAttacks = new LinkedList<>();
         String[] moveSections = {
             "Ruby/Sapphire/Emerald/Colosseum/XD Level Up",
             "Fire Red/Leaf Green Level Up",
@@ -52,7 +40,6 @@ public class App
             "Egg Moves",
             "Special Attacks"};
         boolean sectionMatch = false;
-        int startIndex;
         int endIndex;
 
         /* for (int i = 0; i < 1782; i++){
